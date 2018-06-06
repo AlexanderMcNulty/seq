@@ -1,0 +1,24 @@
+{
+  "name": "seq",
+  "version": "1.0.0",
+  "description": "This work is holst a work from Scotch.io. I am work on this application in order to create a new verson of Graphwhy using nodejs and express. as of 12:12. The core idea for this site is to use boolean questions only.",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Scotch.io, Alexander McNulty",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "pg": "^6.3.4",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}

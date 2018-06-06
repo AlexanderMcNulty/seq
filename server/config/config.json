@@ -1,0 +1,22 @@
+{
+  "development": {
+    "username": "ammc",
+    "password": null,
+    "database": "items-dev",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "ammc",
+    "password": null,
+    "database": "items-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "ammc",
+    "password": null,
+    "database": "items-production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
