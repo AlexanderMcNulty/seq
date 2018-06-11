@@ -1,4 +1,6 @@
 const ItemSet = require('../models').ItemSet;
+const Item = require('../models').Item
+
 
 module.exports = {
     create(req, res) {
@@ -11,7 +13,12 @@ module.exports = {
     },
     list(req, res) {
         return ItemSet
-            .all()
+            .findAll({
+                include: [{
+                    model: Item,
+                    as: 'items',
+                }],
+            })
             .then(itemSet => res.status(200).send(itemSet))
             .catch(error => res.status(400).send(error));
     },

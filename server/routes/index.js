@@ -1,4 +1,5 @@
-const itemController = require('../controllers').itemSet;
+const itemSetController = require('../controllers').itemSet;
+const itemController = require('../controllers').item;
 
 module.exports = (app) => {
 
@@ -6,9 +7,9 @@ module.exports = (app) => {
         message: 'Welcome to the latest GW!',
     }));
 
-    app.post('/api/items', itemController.create);
-    app.get('/api/items', itemController.list);
+    app.post('/api/sets', itemSetController.create);
+    app.get('/api/sets', itemSetController.list);
 
-    app.post('/api/todos/:todoId/items', itemController.create);
+    app.post('/api/sets/:setId/items', itemController.create);
 
 };

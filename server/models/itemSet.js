@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
     },
   });
-  ItemSet.associate = (models) => {
+  ItemSet.associate = function(models) {
     ItemSet.hasMany(models.Item, {
-      foreignKey: 'itemSetId',
+      foreignKey: 'itemId',
       as: 'items',
     });
   };

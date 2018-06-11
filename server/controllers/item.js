@@ -2,12 +2,12 @@ const Item = require('../models').Item;
 
 module.exports = {
     create(req,res) {
-        return TodoItem
+        return Item
             .create({
                 content: req.body.content,
-                todoId: req.params.todoId,
+                ItemSetId: req.params.setId,
             })
-            .then(todoItem => res.status(201).send(todoItem))
+            .then(item => res.status(201).send(item))
             .catch(error => res.status(400).send(error));
     },
 };
