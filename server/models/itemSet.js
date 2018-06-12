@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   ItemSet.associate = function(models) {
     ItemSet.hasMany(models.Item, {
-      foreignKey: 'itemId',
+      foreignKey: 'itemSetId',
       as: 'items',
     });
   };

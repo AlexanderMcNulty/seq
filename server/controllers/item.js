@@ -5,7 +5,7 @@ module.exports = {
         return Item
             .create({
                 content: req.body.content,
-                ItemSetId: req.params.setId,
+                itemSetId: req.params.itemSetId,
             })
             .then(item => res.status(201).send(item))
             .catch(error => res.status(400).send(error));

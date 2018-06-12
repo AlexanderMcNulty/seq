@@ -10,6 +10,6 @@ module.exports = (app) => {
     app.post('/api/sets', itemSetController.create);
     app.get('/api/sets', itemSetController.list);
 
-    app.post('/api/sets/:setId/items', itemController.create);
+    app.post('/api/sets/:itemSetId/items', itemController.create);
 
 };
