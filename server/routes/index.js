@@ -9,7 +9,7 @@ module.exports = (app) => {
 
     app.post('/api/sets', itemSetController.create);
     app.get('/api/sets', itemSetController.list);
-
+    app.get('/api/sets/:itemSetId', itemSetController.retrieve);
     app.post('/api/sets/:itemSetId/items', itemController.create);
-
+    app.put('/api/sets/:itemSetId', itemSetController.update);
 };

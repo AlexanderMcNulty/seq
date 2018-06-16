@@ -22,4 +22,45 @@ module.exports = {
             .then(itemSet => res.status(200).send(itemSet))
             .catch(error => res.status(400).send(error));
     },
+    retrieve(req, res) {
+        return ItemSet
+            .findById(req.params.itemSetId, {
+                include: [{
+                    model: Item,
+                    as: 'items',
+                }],
+            })
+            .then(itemSet => {
+                if (!itemSet) {
+                    return res.status(404).send({
+                        message: 'itemSet Not Found',
+                    });
+                }
+                return res.status(200).send(itemSet);
+        })
+        .catch(error => res.status(400).send(error));
+    },
+    update(req, res) {
+        return ItemSet
+            .findById(req.params.itemSetId, {
+                include: [{
+                    model: Item,
+                    as: 'items',
+                }],
+            })
+            .then(itemSet => {
+                if (!itemSet) {
+                    return res.status(404).send({
+                        message: 'dude....',
+                    });
+                }
+                return itemSet
+                    .update({
+                        title: req.body.title || itemSet.title,
+                    })
+                    .then(() => res.status(200).send(itemSet))
+                    .catch((error) => res.status(400).send(error));
+                })
+                .catch((error) => res.status(400).send(error));
+        },    
 };
