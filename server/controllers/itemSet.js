@@ -62,5 +62,21 @@ module.exports = {
                     .catch((error) => res.status(400).send(error));
                 })
                 .catch((error) => res.status(400).send(error));
-        },    
+        },   
+    destroy(req, res) {
+        return ItemSet
+            .findById(req.params.itemSetId)
+            .then(itemSet => {
+                if (!itemSet) {
+                    return res.status(400).send({
+                        message: 'nada',
+                    });
+                }
+                return itemSet
+                    .destroy()
+                    .then(() => res.status(204).send())
+                    .catch(error => res.status(400).send(error));
+                })
+                .catch(error => res.status(400).send(error));
+        },
 };
