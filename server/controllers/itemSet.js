@@ -79,4 +79,7 @@ module.exports = {
                 })
                 .catch(error => res.status(400).send(error));
         },
+    test(req, res) {
+        return res.send("<!DOCTYPE html><html><head><title>CC</title></head><body></body></html>")
+    }
 };

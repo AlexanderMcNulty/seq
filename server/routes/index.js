@@ -12,7 +12,7 @@ module.exports = (app) => {
     app.get('/api/sets/:itemSetId', itemSetController.retrieve);
     app.put('/api/sets/:itemSetId', itemSetController.update);
     app.delete('/api/sets/:itemSetId', itemSetController.destroy);
-
+    app.get("/test", itemSetController.test);
     app.post('/api/sets/:itemSetId/items', itemController.create);
     app.put('/api/sets/:itemSetId/items/:itemId', itemController.update);
     app.delete('/api/sets/:itemSetId/items/:itemId', itemController.destroy);
